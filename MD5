@@ -1,0 +1,17 @@
+f72bad91b99ef8e4b471be876d54687b *DESCRIPTION
+0a040bdadabaed3f1fbbd5d3a169d732 *NAMESPACE
+4140776d6dec51393046a6b1dd6d9281 *R/functions.r
+6e42cc09755e926ed94b61eef84d72f7 *R/utils.r
+0097548830e2ce33cb08d22a4af1912d *R/zzz.r
+838ed859fa485b89fe62871c7ab57a34 *README.md
+14517a180308f3e45fe417f32f14f66e *build/vignette.rds
+23d15599d91cacb3885b608c029a6087 *inst/doc/pkgGraphR.R
+219cca3a6bea754116d9eb75a946ee3c *inst/doc/pkgGraphR.Rmd
+cde0b71c631ef944e2a41126df9eddf3 *inst/doc/pkgGraphR.html
+0baa880d54b5fab42efb72003d14e69c *inst/extdata/functions.r
+7e0c632eab5b40538e4d7ca9dae645e4 *man/buildPackageGraph.Rd
+9444bf1cf413fc854c6b28b4e9fbb06f *man/collectFunNames.Rd
+a722f47c84d67483a98fd7f1a89a2e0b *man/plotPackageGraph.Rd
+9a3a42e790e452876e8ff17aeb5b6b04 *tests/testthat.R
+ec03a122bc405570a6bd0b43d4af03c3 *tests/testthat/test-functions.R
+219cca3a6bea754116d9eb75a946ee3c *vignettes/pkgGraphR.Rmd
