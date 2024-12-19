@@ -16,7 +16,7 @@ A named list of function assignments in each `.R` file in `x`
 collect all the functions defined in an R program, directory, or file
 }
 \examples{
-system.file("extdata", package = "pkgGraphR") |> 
+system.file("extdata", package = "pkgGraphR") |>
     collectFunNames()
 
 }

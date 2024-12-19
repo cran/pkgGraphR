@@ -28,7 +28,7 @@ very helpful in making sure that all usages of this function get adjusted correc
 
 As this package is specifically intended for development phase, it doesn't 
 require the package to be built and in fact works with any directory containing
-R files, or even a single '.R; file. This has the advantage of being useful outside 
+R files, or even a single '.R' file. This has the advantage of being useful outside 
 of R package development, specifically in cases such as shiny apps which are often 
 developed outside of the package context. 
 

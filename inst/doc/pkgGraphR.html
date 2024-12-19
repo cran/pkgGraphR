@@ -49,7 +49,7 @@ overflow: visible;
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -60,7 +60,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
 { counter-reset: source-line 0; }
@@ -355,7 +355,7 @@ functions depend on this function can be very helpful in making sure
 that all usages of this function get adjusted correctly.</p>
 <p>As this package is specifically intended for development phase, it
 doesn’t require the package to be built and in fact works with any
-directory containing R files, or even a single ’.R; file. This has the
+directory containing R files, or even a single ‘.R’ file. This has the
 advantage of being useful outside of R package development, specifically
 in cases such as shiny apps which are often developed outside of the
 package context.</p>
@@ -370,20 +370,20 @@ containing <code>nodes</code> and <code>edges</code>) with
 with <code>plotPackageGraph</code>. The example below shows how to use
 each function assuming you are in the package or app directory you want
 to visualize.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pkgGraphR)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>funclist <span class="ot">&lt;-</span> <span class="fu">collectFunNames</span>(<span class="at">x =</span> <span class="st">&quot;.&quot;</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>funcgraph <span class="ot">&lt;-</span> <span class="fu">buildPackageGraph</span>(<span class="at">x =</span> <span class="st">&quot;.&quot;</span>, </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                               <span class="at">unique.edges =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">only.connected =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># under default parameters, only the graph is required</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plotPackageGraph</span>(<span class="at">graph =</span> funcgraph)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># alternatively, plot with grouping and/or coloring (requires fun.list)</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plotPackageGraph</span>(<span class="at">graph =</span> funcgraph, </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fun.list =</span> funclist, </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                 <span class="at">use.subgraphs =</span> T, </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                 <span class="at">use.colors =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(pkgGraphR)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>funclist <span class="ot">&lt;-</span> <span class="fu">collectFunNames</span>(<span class="at">x =</span> <span class="st">&quot;.&quot;</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>funcgraph <span class="ot">&lt;-</span> <span class="fu">buildPackageGraph</span>(<span class="at">x =</span> <span class="st">&quot;.&quot;</span>, </span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>                               <span class="at">unique.edges =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>                               <span class="at">only.connected =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="co"># under default parameters, only the graph is required</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="fu">plotPackageGraph</span>(<span class="at">graph =</span> funcgraph)</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="co"># alternatively, plot with grouping and/or coloring (requires fun.list)</span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="fu">plotPackageGraph</span>(<span class="at">graph =</span> funcgraph, </span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>                 <span class="at">fun.list =</span> funclist, </span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>                 <span class="at">use.subgraphs =</span> T, </span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>                 <span class="at">use.colors =</span> T)</span></code></pre></div>
 <div id="known-issues" class="section level3">
 <h3>Known “issues”</h3>
 <p>There are a few known issues which should be taken into
@@ -397,10 +397,10 @@ to visualize. As a workaround, you can use <code>htmlwidgets</code> and
 <code>webshot</code> to generate a high resolution pdf as
 below.</p></li>
 </ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">plotPackageGraph</span>(<span class="at">graph =</span> funcgraph)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>htmlwidgets<span class="sc">::</span><span class="fu">saveWidget</span>(p, <span class="st">&quot;test.html&quot;</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">webshot</span>(<span class="at">url =</span> <span class="st">&quot;test.html&quot;</span>, <span class="at">file =</span> <span class="st">&quot;test.pdf&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">plotPackageGraph</span>(<span class="at">graph =</span> funcgraph)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>htmlwidgets<span class="sc">::</span><span class="fu">saveWidget</span>(p, <span class="st">&quot;test.html&quot;</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">webshot</span>(<span class="at">url =</span> <span class="st">&quot;test.html&quot;</span>, <span class="at">file =</span> <span class="st">&quot;test.pdf&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 

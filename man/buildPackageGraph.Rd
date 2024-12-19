@@ -9,7 +9,7 @@ buildPackageGraph(x, unique.edges = TRUE, only.connected = FALSE)
 \arguments{
 \item{x}{A character string specifying the path to an R package or directory}
 
-\item{unique.edges}{Logical indicating whether there should be only a single 
+\item{unique.edges}{Logical indicating whether there should be only a single
 edge between nodes.
 DEFAULT: TRUE}
 
@@ -25,7 +25,7 @@ data.frame of edges.
 Generates the Nodes and Edges of a set of functions in an R package or directory
 }
 \examples{
-system.file("extdata", package = "pkgGraphR") |> 
+system.file("extdata", package = "pkgGraphR") |>
     buildPackageGraph()
 
 }
