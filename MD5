@@ -1,11 +1,11 @@
-84ea69a14a7f274ca0cbace9c32a85da *DESCRIPTION
+e4e919bb5ef69f36b89cf2f08d129262 *DESCRIPTION
 0a040bdadabaed3f1fbbd5d3a169d732 *NAMESPACE
 c839e708d44779089758518c0f254717 *R/functions.r
-6e42cc09755e926ed94b61eef84d72f7 *R/utils.r
+f5238e25baebc76f86f40a8ea7894712 *R/utils.r
 0097548830e2ce33cb08d22a4af1912d *R/zzz.r
 c7e9082b10f2724b71263f6e1f9c0335 *README.md
 69a6eb467d6b789ae14f8ea9e95f4125 *build/vignette.rds
-23d15599d91cacb3885b608c029a6087 *inst/doc/pkgGraphR.R
+07466ada0133026473b54cad5728c915 *inst/doc/pkgGraphR.R
 eab38b85c9546dd967526b76e4280e8d *inst/doc/pkgGraphR.Rmd
 b0e786b08ef00ac019a3f61fda154dff *inst/doc/pkgGraphR.html
 0baa880d54b5fab42efb72003d14e69c *inst/extdata/functions.r

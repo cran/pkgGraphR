@@ -1,30 +1,29 @@
 #' find all functional assignments
-#' 
+#'
 #' @name findFunNames
 #'
-#' @param x the parsed data from a source file. The output from 
+#' @param x the parsed data from a source file. The output from
 #' \code{\link[utils]{getParseData}}
 #'
 #' @noRd
 #' @keywords internal
 findFunNames <- function(x){
-  res <- lapply(1:nrow(x), \(i){
-    if(i + 2 <= nrow(x)){
-      if(x$token[i] == "SYMBOL"){
-        if(x$token[i+1] == "LEFT_ASSIGN"){
-          if(x$token[i+2] == "FUNCTION"){
-            c(line = x$line1[i], name = x$text[i])
-          }
+    len <- nrow(x) - 2
+    res <- lapply(seq(len), \(i){
+        if(x$token[i] == "SYMBOL"){
+            if(x$token[i+1] == "LEFT_ASSIGN" || x$token[i+1] == "EQ_ASSIGN"){
+                if(x$token[i+2] == "FUNCTION"){
+                    c(line = x$line1[i], name = x$text[i])
+                }
+            }
         }
-      }
-    }
-  }) |> purrr::compact() |> purrr::list_transpose() |> as.data.frame()
-  res$line <- as.numeric(res$line)
-  return(res)
+    }) |> purrr::compact() |> purrr::list_transpose() |> as.data.frame()
+    res$line <- as.numeric(res$line)
+    return(res)
 }
 
 #' find all functional calls and their calling function
-#' 
+#'
 #' @name findFunCalls
 #'
 #' @param x A file path from which function calls should be scraped
@@ -45,7 +44,7 @@ findFunCalls <- function(x, fun.list){
 }
 
 #' color palette when more than 12 are needed
-#' 
+#'
 #' @noRd
 #' @keywords internal
 colors51 <- c("#E64B35","#4DBBD5","#F39B7F","#C8A1A1","#8491B4","#91D1C2","#A4E804",

@@ -1,7 +1,7 @@
 Package: pkgGraphR
 Type: Package
 Title: Graph the Relationship Between Functions in an R Package
-Version: 0.3.0
+Version: 0.3.1
 Authors@R: 
     person(given = "David", 
            family = "Oliver",
@@ -19,7 +19,7 @@ Suggests: knitr, rmarkdown, testthat (>= 3.0.0)
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2024-12-19 15:42:42 UTC; oliverd
+Packaged: 2025-01-03 18:21:50 UTC; oliverd
 Author: David Oliver [aut, cre, cph]
 Repository: CRAN
-Date/Publication: 2024-12-19 16:00:02 UTC
+Date/Publication: 2025-01-07 15:20:08 UTC
